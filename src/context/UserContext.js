@@ -3,7 +3,7 @@ import  { createContext, useContext } from 'react';
 
 const UserContext = createContext();
 
-export function useMyContext() {
+export function useUserContext() {
   return useContext(UserContext);
 }
 
