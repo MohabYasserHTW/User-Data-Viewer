@@ -43,4 +43,4 @@ You can try out the live demo of the Simple Note App
 - Phone: 01050930033
 
 ## Known Issues and Future Development
-Currently, there are no known issues with the app. However, the developer plans to add better style and responsive desgin 
+Currently, there are no known issues with the app. However, the developer plans to add better style 

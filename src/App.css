@@ -41,15 +41,17 @@ h1{
 .info_div{
   margin-top: 20px;
   display: flex;
-  font-size: 1.5rem;
+  font-size: clamp(1rem,2.5vw,1.5rem);
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 .info_div p {
   display: flex;
   align-items: center; 
   gap: 10px;
-  
+  overflow: hidden;
+  min-width: 300px;
 }
 .info_div p a{
   display: flex;
@@ -87,6 +89,7 @@ h1{
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+  flex-wrap: wrap;
 }
 .history-header input{
   width: 300px;

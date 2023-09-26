@@ -1,10 +1,10 @@
-import { useEffect, useState} from "react";
+import { useEffect} from "react";
 import { useUserContext } from "../context/UserContext";
 
 export default function useFetchUser() {
-  const [error, setError] = useState();
+  
 
-  const { updateUser, refresh,setLoading } = useUserContext();
+  const {setError, updateUser, refresh,setLoading } = useUserContext();
 
   
   useEffect(() => {
@@ -16,8 +16,10 @@ export default function useFetchUser() {
       .then((data) => {
         
         updateUser(data.results[0]);
+        setError("")
       })
       .catch((error) => {
+        console.log(error)
         setError(error);
       })
       .finally(() => {
@@ -25,5 +27,5 @@ export default function useFetchUser() {
       });
   }, [refresh]);
 
-  return { error };
+  
 }

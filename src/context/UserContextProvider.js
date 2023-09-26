@@ -7,6 +7,7 @@ function UserContextProvider({ children }) {
   const [refresh, setRefresh] = useState(false);
   const [maxLength, setMaxLength] = useState(5);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const recoverUser = (oldUser) => {
     setUser(oldUser)
@@ -33,7 +34,7 @@ function UserContextProvider({ children }) {
 
   return (
     <UserContext.Provider
-      value={{loading, setLoading, user, updateUser, history, addToHistory, setRefresh, refresh,recoverUser,setMaxLength,maxLength }}
+      value={{error, setError, loading, setLoading, user, updateUser, history, addToHistory, setRefresh, refresh,recoverUser,setMaxLength,maxLength }}
     >
       {children}
     </UserContext.Provider>

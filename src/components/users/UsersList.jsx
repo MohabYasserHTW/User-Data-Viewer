@@ -10,14 +10,16 @@ function UsersList() {
     recoverUser,
     setMaxLength,
     maxLength,
-    loading,
+    loading,error
   } = useUserContext();
 
+  console.log(error.message)
   return (
     <main>
       <div className="current-user_div">
         <button onClick={() => setRefresh((prev) => !prev)}>Refresh</button>
-        {loading ? "Loading..." : <UserCard user={user} />}
+        {error.message?.length? <h1 style={{color:"red"}}>{error.message}</h1>:""}
+        {loading ? <h1>Loading...</h1> : <UserCard user={user} />}
       </div>
       <div className="history-section">
         <div className="history-header">
