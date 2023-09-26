@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/User-Data-Viewer/static/css/main.bfb2fe62.css",
+    "main.js": "/User-Data-Viewer/static/js/main.e10c6174.js",
+    "index.html": "/User-Data-Viewer/index.html",
+    "main.bfb2fe62.css.map": "/User-Data-Viewer/static/css/main.bfb2fe62.css.map",
+    "main.e10c6174.js.map": "/User-Data-Viewer/static/js/main.e10c6174.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bfb2fe62.css",
+    "static/js/main.e10c6174.js"
+  ]
+}
