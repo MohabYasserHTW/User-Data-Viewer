@@ -3,7 +3,25 @@
   padding: 0;
   margin: 0;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 h1{
   font-size: 2rem;
 }
@@ -25,7 +43,7 @@ h1{
 .current-user_div button{
   position: absolute;
   top: 20px;
-  right:50px;
+  right:20px;
   width:clamp(25px,20vw,100px) ;
   height: clamp(25px,20vw,100px) ;
   border-radius: 50%;
