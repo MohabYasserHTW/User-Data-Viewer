@@ -1,19 +1,29 @@
 import { useEffect, useState } from "react";
+import { useUserContext } from "../context/UserContext";
 
+export default function useFetchUser() {
+  const [error, setError] = useState();
+  const [loading, setLoading] = useState(true);
 
-export default function  useUserHook(){
-    const [refresh,setRefresh] = useState(false)
-    const [users,setUsers] = useState([])
-    const [usersHistory,setUsersHistory] = useState([])
+  const { updateUser, refresh } = useUserContext();
 
-    useEffect(() => {
+  useEffect(() => {
+    
+    fetch("https://randomuser.me/api/")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
         
-       fetch('https://randomuser.me/api/')
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error(error));
-    }
-    ,[refresh])
+        updateUser(data.results[0]);
+      })
+      .catch((error) => {
+        setError(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [refresh]);
 
-    return {setRefresh, users, usersHistory}
+  return { error, loading };
 }
