@@ -3,28 +3,32 @@
   padding: 0;
   margin: 0;
 }
-.App {
-  text-align: center;
-  
-}
+
 h1{
   font-size: 2rem;
 }
-
+.main{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
 .current-user_div{
   position: relative;
   padding: 1rem;
-  height:500px ;
+  height:100vh;
   background-color: rgb(28, 13, 36);
   color: white;
   box-shadow: 0px 0px 15px black;
+  display: flex;
+}
+.user-card{
+  width: 100%;
 }
 .current-user_div button{
   position: absolute;
-  top: 20%;
-  right:10%;
-  width: 100px;
-  height: 100px;
+  bottom: 20px;
+  right:40%;
+  width:clamp(50px,20vw,100px) ;
+  height: clamp(50px,20vw,100px) ;
   border-radius: 50%;
   font-size: 1.25rem;
   border: none;
@@ -39,8 +43,10 @@ h1{
 }
 
 .info_div{
+  width: 100%;
   margin-top: 20px;
   display: flex;
+  flex-direction: column;
   font-size: clamp(1rem,2.5vw,1.5rem);
   align-items: center;
   gap: 10px;
@@ -53,21 +59,20 @@ h1{
   overflow: hidden;
   min-width: 300px;
 }
-.info_div p a{
+ a{
   display: flex;
   align-items: center; 
   gap: 10px;
-  color: rgb(254, 254, 254);
+  color: rgb(120, 75, 218);
   text-decoration: none;
 }
-.info_div svg{
+svg{
   width: 50px;
   height: 50px;
   color: rgb(255, 255, 255);
 }
 .info_div img{
-  width: 100px;
-  height: 100px;
+  
   border-radius: 50%;
 }
 .info_div_contact{
@@ -76,23 +81,33 @@ h1{
   flex-direction: column;
 }
 .current-user_div img{
-  width: 200px;
-  height: 200px;
+  width: clamp(100px,50vw,200px);
+  height: clamp(100px,50vw,200px);
 }
 .history-section{
-  margin-top: 50px;
-
+    overflow-y: auto;
+    height: 100vh;
+    overflow-x: hidden;
+    
+    
 }
 
 .history-header{
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  height: 25vh;
   padding: 1rem;
   flex-wrap: wrap;
+  
+  color: rgb(19, 18, 23);
+}
+.history-header h1{
+  text-align: center;
+  color: rgb(19, 18, 23);
 }
 .history-header input{
-  width: 300px;
+  width: 100%;
   font-size: 1.1rem;
   border-radius: 50px;
   padding: 1rem;
@@ -104,16 +119,37 @@ h1{
   font-size: 1.1rem;
 }
 .history-list {
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
-  margin-top: 20px;
+  background-color: rgb(19, 19, 56);
+  
 }
 .history-list li{
+  display: flex;
   color: white;
-  padding: 2rem;
+  padding: 1rem;
+  font-size: 1rem;
+  gap: 5px;
+  align-items: center;
+  flex-grow: 1;
+}
+.history-list li img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 .history-list li:nth-child(odd){
-  background-color: rgb(157, 153, 153);
+  background-color: rgba(31, 34, 36, 0.961);
 }
 .history-list li:nth-child(even){
   background-color: rgba(36, 43, 48, 0.915);
+}
+.extra-info{
+  padding: 2rem;
+  font-size: clamp(1rem,2.5vw,2rem);
+}
+.extra-info li{
+  display: flex;
+  align-items: center;
 }

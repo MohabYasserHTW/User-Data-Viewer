@@ -1,8 +1,11 @@
 import React from "react";
 import { useUserContext } from "../../context/UserContext";
 import UserCard from "./UserCard";
+import UserItem from "./UserItem";
+import useFetchUser from "../../hooks/GetUserHook";
 
 function UsersList() {
+  useFetchUser(); 
   const {
     user,
     history,
@@ -16,14 +19,7 @@ function UsersList() {
 
   console.log(error.message);
   return (
-    <main>
-      <div className="current-user_div">
-        <button onClick={() => setRefresh((prev) => !prev)}>Refresh</button>
-        {error.message?.length && (
-          <h1 style={{ color: "red" }}>{error.message}</h1>
-        )}
-        {loading ? <h1>Loading...</h1> : <UserCard user={user} />}
-      </div>
+    <main className="main">
       <div className="history-section">
         <div className="history-header">
           <h1> History </h1>
@@ -44,12 +40,19 @@ function UsersList() {
                     onClick={() => recoverUser(user)}
                     style={{ cursor: "pointer" }}
                   >
-                    <UserCard user={user} key={user.id?.value} />
+                    <UserItem user={user} key={user.id?.value} />
                   </li>
                 );
               })
             : null}
         </ul>
+      </div>
+      <div className="current-user_div">
+        <button onClick={() => setRefresh((prev) => !prev)}>Fetch</button>
+        {error.message?.length && (
+          <h1 style={{ color: "red" }}>{error.message}</h1>
+        )}
+        {loading ? <h1>Loading...</h1> : <UserCard user={user} />}
       </div>
     </main>
   );

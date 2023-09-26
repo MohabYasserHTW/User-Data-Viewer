@@ -1,12 +1,13 @@
 import "./App.css";
+import UsersList from "./components/users/UsersList";
 
-import UsersSection from "./components/users/UsersSection";
+
 import UserContextProvider from "./context/UserContextProvider";
 
 function App() {
   return (
     <UserContextProvider>
-      <UsersSection />
+      <UsersList />
     </UserContextProvider>
   );
 }
