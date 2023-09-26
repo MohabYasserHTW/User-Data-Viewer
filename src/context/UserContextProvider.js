@@ -6,6 +6,7 @@ function UserContextProvider({ children }) {
   const [history, setHistory] = useState([]);
   const [refresh, setRefresh] = useState(false);
   const [maxLength, setMaxLength] = useState(5);
+  const [loading, setLoading] = useState(true);
 
   const recoverUser = (oldUser) => {
     setUser(oldUser)
@@ -20,7 +21,7 @@ function UserContextProvider({ children }) {
   };
 
   const addToHistory = (newUser) => {
-    if (history.length > maxLength) {
+    if (history.length >= maxLength) {
       history.pop();
       const newHistory = history;
       setHistory([newUser, ...newHistory]);
@@ -32,7 +33,7 @@ function UserContextProvider({ children }) {
 
   return (
     <UserContext.Provider
-      value={{ user, updateUser, history, addToHistory, setRefresh, refresh,recoverUser,setMaxLength,maxLength }}
+      value={{loading, setLoading, user, updateUser, history, addToHistory, setRefresh, refresh,recoverUser,setMaxLength,maxLength }}
     >
       {children}
     </UserContext.Provider>
