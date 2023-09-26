@@ -27,7 +27,7 @@ h1{
 }
 .main{
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 3fr 1fr;
 }
 .current-user_div{
   position: relative;
@@ -42,8 +42,8 @@ h1{
 }
 .current-user_div button{
   position: absolute;
-  top: 20px;
-  right:20px;
+  bottom: 50px;
+  right:40%;
   width:clamp(25px,20vw,100px) ;
   height: clamp(25px,20vw,100px) ;
   border-radius: 50%;
@@ -69,19 +69,21 @@ h1{
   gap: 10px;
   flex-wrap: wrap;
 }
-.info_div p {
+/* .info_div p {
   display: flex;
   align-items: center; 
   gap: 10px;
   overflow: hidden;
   min-width: 300px;
-}
+  
+} */
  a{
   display: flex;
   align-items: center; 
   gap: 10px;
   color: rgb(120, 75, 218);
   text-decoration: none;
+  word-break: break-all;
 }
 svg{
   width:clamp(20px,5vw,50px);

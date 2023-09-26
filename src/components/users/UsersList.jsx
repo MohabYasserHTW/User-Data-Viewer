@@ -20,6 +20,13 @@ function UsersList() {
   console.log(error.message);
   return (
     <main className="main">
+      <div className="current-user_div">
+        <button disabled={loading} onClick={() => setRefresh((prev) => !prev)}>Fetch</button>
+        {error.message?.length && (
+          <h1 style={{ color: "red" }}>{error.message}</h1>
+        )}
+        {loading ? <h1>Loading...</h1> : <UserCard user={user} />}
+      </div>
       <div className="history-section">
         <div className="history-header">
           <h1> History </h1>
@@ -47,13 +54,7 @@ function UsersList() {
             : null}
         </ul>
       </div>
-      <div className="current-user_div">
-        <button onClick={() => setRefresh((prev) => !prev)}>Fetch</button>
-        {error.message?.length && (
-          <h1 style={{ color: "red" }}>{error.message}</h1>
-        )}
-        {loading ? <h1>Loading...</h1> : <UserCard user={user} />}
-      </div>
+      
     </main>
   );
 }
