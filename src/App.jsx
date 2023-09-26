@@ -1,12 +1,7 @@
+import "./App.css";
 
-import './App.css';
-
-import UsersSection from './components/users/UsersSection';
-import UserContextProvider from './context/UserContextProvider';
-
-
-
-
+import UsersSection from "./components/users/UsersSection";
+import UserContextProvider from "./context/UserContextProvider";
 
 function App() {
   return (

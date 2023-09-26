@@ -3,12 +3,13 @@ import useFetchUser from "../../hooks/GetUserHook";
 import UsersList from "./UsersList";
 
 function UsersSection() {
-  
-    useFetchUser();
+  useFetchUser();
 
-  return <section>
-    <UsersList />
-  </section>;
+  return (
+    <section>
+      <UsersList />
+    </section>
+  );
 }
 
 export default UsersSection;

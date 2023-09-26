@@ -10,9 +10,9 @@ function UserContextProvider({ children }) {
   const [error, setError] = useState("");
 
   const recoverUser = (oldUser) => {
-    setUser(oldUser)
-    setHistory(prev => prev.filter(u => u.id.value !== oldUser.id.value))
-  }
+    setUser(oldUser);
+    setHistory((prev) => prev.filter((u) => u.id.value !== oldUser.id.value));
+  };
 
   const updateUser = (newUser) => {
     if (user) {
@@ -34,7 +34,21 @@ function UserContextProvider({ children }) {
 
   return (
     <UserContext.Provider
-      value={{error, setError, loading, setLoading, user, updateUser, history, addToHistory, setRefresh, refresh,recoverUser,setMaxLength,maxLength }}
+      value={{
+        error,
+        setError,
+        loading,
+        setLoading,
+        user,
+        updateUser,
+        history,
+        addToHistory,
+        setRefresh,
+        refresh,
+        recoverUser,
+        setMaxLength,
+        maxLength,
+      }}
     >
       {children}
     </UserContext.Provider>
