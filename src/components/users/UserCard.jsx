@@ -1,4 +1,5 @@
 import React from "react";
+import {BiLogoGmail, BiSolidLocationPlus} from "react-icons/bi"
 
 function UserCard({ user }) {
   return (
@@ -11,9 +12,8 @@ function UserCard({ user }) {
           <div className="info_div">
           <img src={user.picture.large} alt="user img" />
           <div className="info_div_contact">
-
-            <p>email: {user.email}</p>
-            <p>location: {user.location.city}</p>
+            <p><a href={`mailto:${user.email}`}><b><BiLogoGmail /></b> {user.email}</a></p>
+            <p><b><BiSolidLocationPlus /></b> {user.location.city}</p>
           </div>
           </div>
         </>
