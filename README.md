@@ -14,8 +14,10 @@ To run User Data Viewer locally, follow these steps:
 2. 
     ```bash 
     $ cd User-Data-Viewer
-3. ```bash  $ npm install
-4. ```bash  $ npm start
+3.  ```bash 
+    $ npm install
+4.  ```bash
+    $ npm start
 
 ## Usage
 
