@@ -8,9 +8,9 @@ function UserCard({ user }) {
         <>
           <div className="info_div">
             <img src={user.picture.large} alt="user img" />
-            
+
             <h1>
-            {user.name?.title}. {user.name?.first} {user.name?.last}
+              {user.name?.title}. {user.name?.first} {user.name?.last}
             </h1>
           </div>
           <ul className="extra-info">
@@ -19,15 +19,19 @@ function UserCard({ user }) {
             </li>
             <li>Age: {user.dob?.age}</li>
             <li>Phone: {user.phone}</li>
-            <li><BiSolidLocationPlus />
+            <li>
+              <BiSolidLocationPlus />
 
-{user.location.city}</li>
-            <li><a href={`mailto:${user.email}`}>
-                  <b>
-                    <BiLogoGmail />
-                  </b>{" "}
-                  {user.email}
-                </a></li>
+              {user.location.city}
+            </li>
+            <li>
+              <a href={`mailto:${user.email}`}>
+                <b>
+                  <BiLogoGmail />
+                </b>{" "}
+                {user.email}
+              </a>
+            </li>
           </ul>
         </>
       )}

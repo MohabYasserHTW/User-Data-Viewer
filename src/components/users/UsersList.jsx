@@ -5,7 +5,7 @@ import UserItem from "./UserItem";
 import useFetchUser from "../../hooks/GetUserHook";
 
 function UsersList() {
-  useFetchUser(); 
+  useFetchUser();
   const {
     user,
     history,
@@ -21,11 +21,13 @@ function UsersList() {
   return (
     <main className="main">
       <div className="current-user_div">
-        <button disabled={loading} onClick={() => setRefresh((prev) => !prev)}>Fetch</button>
         {error.message?.length && (
           <h1 style={{ color: "red" }}>{error.message}</h1>
         )}
         {loading ? <h1>Loading...</h1> : <UserCard user={user} />}
+        <button disabled={loading} onClick={() => setRefresh((prev) => !prev)}>
+          Fetch
+        </button>
       </div>
       <div className="history-section">
         <div className="history-header">
@@ -54,7 +56,6 @@ function UsersList() {
             : null}
         </ul>
       </div>
-      
     </main>
   );
 }

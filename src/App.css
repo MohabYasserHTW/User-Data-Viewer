@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -10,42 +10,44 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
-h1{
+h1 {
   font-size: 2rem;
 }
-.main{
+.main {
   display: grid;
   grid-template-columns: 3fr 1fr;
 }
-.current-user_div{
+.current-user_div {
   position: relative;
   padding: 1rem;
-  min-height:100vh;
+  min-height: 100vh;
   background-color: rgb(28, 13, 36);
   color: white;
   display: flex;
+  flex-direction: column;
+  padding-bottom: 150px;
 }
-.user-card{
+.user-card {
   width: 100%;
 }
-.current-user_div button{
+.current-user_div button {
   position: absolute;
   bottom: 50px;
-  right:40%;
-  width:clamp(25px,20vw,100px) ;
-  height: clamp(25px,20vw,100px) ;
+  right: calc(50% - 37.5px);
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   font-size: 1.25rem;
   border: none;
@@ -54,17 +56,19 @@ h1{
   background-color: rgba(255, 235, 205, 0.105);
   color: white;
   text-shadow: 0px 0px 5px white;
+  letter-spacing: 1.5px;
+  margin: 0 auto;
 }
-.current-user_div button:active{
-  transform: scale(.9);
+.current-user_div button:active {
+  transform: scale(0.9);
 }
 
-.info_div{
+.info_div {
   width: 100%;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  font-size: clamp(1rem,2.5vw,1.5rem);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
@@ -77,42 +81,42 @@ h1{
   min-width: 300px;
   
 } */
- a{
+a {
   display: flex;
-  align-items: center; 
+  align-items: center;
   gap: 10px;
   color: rgb(120, 75, 218);
   text-decoration: none;
   word-break: break-all;
 }
-svg{
-  width:clamp(20px,5vw,50px);
+svg {
+  width: clamp(20px, 5vw, 50px);
   height: 50px;
   color: rgb(255, 255, 255);
+  margin-left: -10px;
 }
-.info_div img{
-  
+.info_div img {
   border-radius: 50%;
 }
-.info_div_contact{
+.info_div_contact {
   padding: 1rem;
   display: flex;
   flex-direction: column;
 }
-.current-user_div h1{
-  font-size: clamp(16px,2.5vw,2rem);
+.current-user_div h1 {
+  font-size: clamp(16px, 2.5vw, 2rem);
 }
-.current-user_div img{
-  width: clamp(75px,25vw,200px);
-  height: clamp(75px,25vw,200px);
+.current-user_div img {
+  width: clamp(75px, 25vw, 200px);
+  height: clamp(75px, 25vw, 200px);
 }
-.history-section{
+.history-section {
   overflow-y: auto;
   overflow-x: hidden;
   background-color: rgb(20, 10, 30);
 }
 
-.history-header{
+.history-header {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -121,54 +125,56 @@ svg{
   flex-wrap: wrap;
   color: rgb(255, 255, 255);
 }
-.history-header h1{
+.history-header h1 {
   text-align: center;
   color: rgb(255, 255, 255);
+  font-size: clamp(0.5rem, 5vw, 2rem);
 }
-.history-header input{
+.history-header input {
   width: 100%;
-  font-size: 1.1rem;
+  font-size: clamp(0.5rem, 2vw, 1.1rem);
   border-radius: 50px;
-  padding: 1rem;
+  padding: clamp(0.5rem, 2vw, 1.1rem);
   border: none;
   box-shadow: 0px 0px 5px rgb(251, 246, 246);
   margin-top: 10px;
 }
-.history-header label{
-  font-size: 1.1rem;
+.history-header input:focus {
+  border: none;
+  outline: none;
+}
+.history-header label {
+  font-size: clamp(0.5rem, 2.5vw, 1.1rem);
 }
 .history-list {
   display: flex;
   flex-direction: column;
   list-style-type: none;
   height: 75vh;
-  
-  
 }
-.history-list li{
+.history-list li {
   display: flex;
   color: white;
   padding: 1rem;
-  font-size: 1rem;
+  font-size: clamp(0.5rem, 2vw, 1.1rem);
   gap: 5px;
   align-items: center;
-  
 }
-.history-list li img{
+.history-list li img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
-.history-list li:nth-child(odd){
+.history-list li:nth-child(odd) {
   background-color: rgba(31, 34, 36, 0.961);
 }
-.history-list li:nth-child(even){
+.history-list li:nth-child(even) {
   background-color: rgba(36, 43, 48, 0.915);
 }
-.extra-info{
-  font-size: clamp(1rem,2.5vw,1.3rem);
+.extra-info {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
 }
-.extra-info li{
+.extra-info li {
   padding: 1rem;
   display: flex;
   align-items: center;

@@ -1,7 +1,6 @@
 import "./App.css";
 import UsersList from "./components/users/UsersList";
 
-
 import UserContextProvider from "./context/UserContextProvider";
 
 function App() {
