@@ -42,7 +42,7 @@ h1 {
 .user-card {
   position: relative;
   width: 100%;
-  animation: from-left 1s ease-in-out  forwards;
+  animation: from-left 1s ease-in-out forwards;
 }
 
 .current-user_div button {
@@ -64,6 +64,8 @@ h1 {
 }
 .current-user_div button:active {
   transform: scale(0.9);
+  background-color: white;
+  color: black;
 }
 
 .info_div {
@@ -76,14 +78,7 @@ h1 {
   gap: 10px;
   flex-wrap: wrap;
 }
-/* .info_div p {
-  display: flex;
-  align-items: center; 
-  gap: 10px;
-  overflow: hidden;
-  min-width: 300px;
-  
-} */
+
 a {
   display: flex;
   align-items: center;
@@ -96,7 +91,7 @@ svg {
   width: clamp(20px, 5vw, 50px);
   height: clamp(20px, 5vw, 50px);
   color: rgb(252, 252, 254);
-  
+
   border-radius: 50%;
   padding: 0rem;
   text-align: left;
@@ -167,24 +162,19 @@ svg {
   font-size: clamp(0.5rem, 2vw, 1.1rem);
   gap: 5px;
   align-items: center;
-  /* transition: margin-left .3s ease-out; */
-  animation: from-left 1s ease-in-out  forwards;
+  transition: margin-left 0.3s ease-out;
 }
-.history-list li:hover{
+.history-list li:hover {
   margin-left: 10px;
-  opacity: .9;
+  border: solid white 1px;
+  opacity: 0.9;
 }
 .history-list li img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
-.history-list li:nth-child(odd) {
-  background-color: rgba(31, 34, 36, 0.961);
-}
-.history-list li:nth-child(even) {
-  background-color: rgba(36, 43, 48, 0.915);
-}
+
 .extra-info {
   font-size: clamp(1rem, 2.5vw, 1.3rem);
 }
@@ -194,10 +184,10 @@ svg {
   align-items: center;
 }
 @keyframes from-left {
-  0%{
+  0% {
     left: -100%;
   }
-  100%{
+  100% {
     left: 0;
   }
 }
