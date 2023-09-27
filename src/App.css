@@ -40,8 +40,11 @@ h1 {
   padding-bottom: 150px;
 }
 .user-card {
+  position: relative;
   width: 100%;
+  animation: from-left 1s ease-in-out  forwards;
 }
+
 .current-user_div button {
   position: absolute;
   bottom: 50px;
@@ -91,9 +94,12 @@ a {
 }
 svg {
   width: clamp(20px, 5vw, 50px);
-  height: 50px;
-  color: rgb(255, 255, 255);
-  margin-left: -10px;
+  height: clamp(20px, 5vw, 50px);
+  color: rgb(252, 252, 254);
+  
+  border-radius: 50%;
+  padding: 0rem;
+  text-align: left;
 }
 .info_div img {
   border-radius: 50%;
@@ -152,13 +158,21 @@ svg {
   list-style-type: none;
   height: 75vh;
 }
+
 .history-list li {
+  position: relative;
   display: flex;
   color: white;
   padding: 1rem;
   font-size: clamp(0.5rem, 2vw, 1.1rem);
   gap: 5px;
   align-items: center;
+  /* transition: margin-left .3s ease-out; */
+  animation: from-left 1s ease-in-out  forwards;
+}
+.history-list li:hover{
+  margin-left: 10px;
+  opacity: .9;
 }
 .history-list li img {
   width: 50px;
@@ -178,4 +192,12 @@ svg {
   padding: 1rem;
   display: flex;
   align-items: center;
+}
+@keyframes from-left {
+  0%{
+    left: -100%;
+  }
+  100%{
+    left: 0;
+  }
 }

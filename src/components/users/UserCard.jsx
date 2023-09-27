@@ -14,9 +14,7 @@ function UserCard({ user }) {
             </h1>
           </div>
           <ul className="extra-info">
-            <li>
-              {user.name?.title}. {user.name?.first} {user.name?.last}
-            </li>
+            
             <li>Age: {user.dob?.age}</li>
             <li>Phone: {user.phone}</li>
             <li>
