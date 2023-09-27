@@ -17,9 +17,9 @@ function UserCard({ user }) {
             <li>Phone: {user.phone}</li>
             <li>Location: {user.location.city}</li>
             <li>
-              Email:
-              <a href={`mailto:${user.email}`}>
-                <b>{user.email}</b>
+              Email
+              <a href={`mailto: ${user.email}`}>
+                <b> {`: ${user.email}`}</b>
               </a>
             </li>
           </ul>
